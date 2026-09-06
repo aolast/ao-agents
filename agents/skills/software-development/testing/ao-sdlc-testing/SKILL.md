@@ -7,6 +7,8 @@ description: 为软件变更设计和执行必要测试与验证。用于制定�
 
 从目标项目的测试入口、预期行为和本次风险出发。验证可以是自动化测试、静态检查、人工操作或运行环境观测；说明每种证据能支持的结论。
 
+运行会写入文件的验证前，应用 [workplace-and-git-branch](../../implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) 的工作区与环境条件；已有明确安排时复用。仅审阅测试设计或证据时，不启动工作区准备或分支操作。
+
 ## 选择验证
 
 1. 对照需求或 [design](../../design/ao-sdlc-design/SKILL.md) 中的契约列出需要证明的判断，不从改了哪些行直接推导全部测试。
