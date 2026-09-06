@@ -1,9 +1,13 @@
 # Skills
 
-未来的 skills 放在 `ao-<skill-name>/`，按目标工具规范包含 `SKILL.md` 和必要资源。当前仅预留目录，没有可安装 skill。
+按领域维护可复用的 Agent skills，允许分类子目录。实际 skill 目录包含 `SKILL.md`，以 `ao-` 开头，目录名与 frontmatter 的 `name` 一致；分类目录不受 skill 前缀约束。
 
-基础 skills 各自负责一个清晰职责，顶层 skills 编排调用。两者先放在同一级，命名体现用途。共享标准只维护在基础 skill，编排层描述顺序、依赖与结果如何使用。
+| 领域 | 入口 |
+| --- | --- |
+| 软件开发 | [software-development](software-development/README.md)，10 个 `ao-sdlc-` skills 初版 |
 
-新增时明确触发条件、输入、输出、依赖与验证示例。真实安装前核实目标工具的规范和依赖发现方式。
+领域 README 维护职责、边界和组织方式；运行时入口 skill 负责按任务选择方法。共享标准只维护一份，组合调用不构成固定的层级或强制流水线。
 
-命名、中文为主的编写约定与检查方式统一遵循 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。
+新增领域或环境专项内容时按实际需求建立目录；源码嵌套不代表宿主自动递归发现。分发时包含所引用的 skills，验证安装布局和依赖解析。
+
+命名、语言与维护流程遵循 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。当前内容为仓库中的初版源码，尚未安装到特定 Agent 软件。
