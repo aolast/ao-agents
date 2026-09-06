@@ -14,7 +14,7 @@
 
 这些分类表达部署意图，不声明任何软件的加载优先级或对 managed 指令的支持。实际名称、路径、权限和覆盖语义必须在对应工具的配置说明中核实。
 
-`agents/prompts/tasks/` 保存可以直接粘贴使用的任务入口。需要明确触发条件、可复用步骤和配套资源时，使用 `agents/skills/`。skills 按领域组织，允许多层分类。软件开发领域采用 `ao-sdlc-` 命名空间；领域 README 解释结构，overview skill 按任务导航。通用方法与专项活动按职责分组，可相互组合，不构成强制调用层级。参见 [软件开发 skills](../agents/skills/software-development/README.md)。
+`agents/prompts/tasks/` 保存可以直接粘贴使用的任务入口。需要明确触发条件、可复用步骤和配套资源时，使用 `agents/skills/`。skills 按领域组织，允许多层分类。软件开发领域采用 `ao-sdlc-` 命名空间，在活动分类目录下放独立的 skill 文件夹；领域 README 维护具体分类与归属，overview skill 在领域根目录按任务导航。各活动可相互组合，不构成强制调用层级。参见 [软件开发 skills](../agents/skills/software-development/README.md)。
 
 规则只维护一份。编排 skill 负责步骤、依赖、输入输出和停止条件，引用基础 skill 的标准。分发时必须确保被引用的依赖也已安装；不假定目标工具能访问仓库里的相对路径。
 

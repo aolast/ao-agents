@@ -11,8 +11,8 @@ description: 按需求和设计完成增量代码变更，并提供可复用的�
 
 1. 从可理解、可验证的最小完整修改开始。复用现有合适的机制，避免平行实现同一能力。
 2. 逐步完成行为和必要的配套变化，包括调用方、配置和使用文档。源码、生成产物和真实运行环境的状态分别核实。
-3. 新信息推翻设计假设时，回到 [design](../ao-sdlc-design/SKILL.md)；原因仍不清楚的问题交给 [investigation](../ao-sdlc-investigation/SKILL.md)，避免叠加未经验证的补丁。
-4. 根据 [testing](../ao-sdlc-testing/SKILL.md) 取得证据。以 [review](../ao-sdlc-review/SKILL.md) 的方法自审有实质风险的变更；作为审查标准被引用时，仅应用下列标准，不重新启动实现或审查循环。
+3. 新信息推翻设计假设时，回到 [design](../../design/ao-sdlc-design/SKILL.md)；原因仍不清楚的问题交给 [investigation](../../investigation/ao-sdlc-investigation/SKILL.md)，避免叠加未经验证的补丁。
+4. 根据 [testing](../../testing/ao-sdlc-testing/SKILL.md) 取得证据。以 [review](../../review/ao-sdlc-review/SKILL.md) 的方法自审有实质风险的变更；作为审查标准被引用时，仅应用下列标准，不重新启动实现或审查循环。
 
 ## 实现质量标准
 
@@ -30,7 +30,7 @@ description: 按需求和设计完成增量代码变更，并提供可复用的�
 
 查看完整差异，确认实现符合目标且没有遗留临时调试逻辑。收到审查问题时先核实条件和依据：成立则修正，不成立则提供反证。按受影响范围复核；若仍存在阻塞，说明缺口，不循环制造修改来满足意见数量。
 
-交付实际行为变化、关键实现理由和验证结果。表达方法使用 [communication](../ao-sdlc-communication/SKILL.md)；长期任务的接续使用 [work-log](../ao-sdlc-work-log/SKILL.md)。
+交付实际行为变化、关键实现理由和验证结果。表达方法使用 [communication](../../communication/ao-sdlc-communication/SKILL.md)；长期任务的接续使用 [work-log](../../work-log/ao-sdlc-work-log/SKILL.md)。
 
 ## 边界示例
 

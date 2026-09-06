@@ -12,14 +12,14 @@ description: 组织软件性能优化。用于改善延迟、吞吐、内存、�
 - 固定或记录代码版本、配置、输入规模与分布、并发、硬件、依赖状态及测量边界。
 - 区分冷启动与预热、不同缓存状态、请求类型和错误比例；比较条件按实际场景选择，不将一种有利状态的收益推广到全部负载。
 - 使用足以理解波动的重复测量和合适统计量，不用单次样本给出稳定提升结论。记录测量本身的开销或局限。
-- 根据问题定位时间与资源消耗，调用 [investigation](../ao-sdlc-investigation/SKILL.md) 选择环境相关方法。没有访问或观测能力时，说明待验证假设，不虚构 profiler 结果。
+- 根据问题定位时间与资源消耗，调用 [investigation](../../investigation/ao-sdlc-investigation/SKILL.md) 选择环境相关方法。没有访问或观测能力时，说明待验证假设，不虚构 profiler 结果。
 
 ## 方案与实施
 
 1. 解释主要瓶颈及支持证据，区分局部热点和端到端限制。
-2. 用 [design](../ao-sdlc-design/SKILL.md) 比较收益与代价，包括复杂度、资源转移、数据新鲜度和运行成本。只在契约允许时改变精度、一致性或功能。
-3. 用 [implementation](../ao-sdlc-implementation/SKILL.md) 做范围清楚的修改。尽量让一次实验的变化可归因，避免同时改变算法、硬件和工作负载后声称代码收益。
-4. 用 [testing](../ao-sdlc-testing/SKILL.md) 验证正确性及相关回归，再在可比较条件下衡量性能。性能收益不能替代功能证据。
+2. 用 [design](../../design/ao-sdlc-design/SKILL.md) 比较收益与代价，包括复杂度、资源转移、数据新鲜度和运行成本。只在契约允许时改变精度、一致性或功能。
+3. 用 [implementation](../../implementation/ao-sdlc-implementation/SKILL.md) 做范围清楚的修改。尽量让一次实验的变化可归因，避免同时改变算法、硬件和工作负载后声称代码收益。
+4. 用 [testing](../../testing/ao-sdlc-testing/SKILL.md) 验证正确性及相关回归，再在可比较条件下衡量性能。性能收益不能替代功能证据。
 
 ## 收益判断与交付
 
@@ -27,7 +27,7 @@ description: 组织软件性能优化。用于改善延迟、吞吐、内存、�
 
 对无法解释的差异返回调查。目标已达成、收益无法超过波动或代价不值得时，报告结论并停止继续堆叠优化。实验收益与线上收益分开，未经部署观测不声称线上已改善。
 
-相关结果按 [communication](../ao-sdlc-communication/SKILL.md) 表达。审查性能变更时使用本 skill 的判断标准，不重新启动实施流程。
+相关结果按 [communication](../../communication/ao-sdlc-communication/SKILL.md) 表达。审查性能变更时使用本 skill 的判断标准，不重新启动实施流程。
 
 ## 边界示例
 
