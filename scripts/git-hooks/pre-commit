@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+root=$(git rev-parse --show-toplevel)
+cd "$root"
+if [ -x "$root/.venv/bin/python3" ]; then
+    exec "$root/.venv/bin/python3" scripts/check-skill-names.py
+fi
+exec python3 scripts/check-skill-names.py

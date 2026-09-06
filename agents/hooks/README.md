@@ -1,6 +1,6 @@
 # Hooks
 
-存放自己实现的 Agent 事件 hooks。编译型实现使用 Rust；当前尚无实现，不建立空 crate 或 Cargo workspace。
+存放自己实现的 Agent 事件 hooks。实现统一使用 Rust，便于二进制分发；当前尚无实现，不建立空 crate 或 Cargo workspace。
 
 第一个 hook 落地时，明确宿主软件与事件、输入输出协议、退出码、超时、副作用和失败策略，并测试重要成功与失败路径。Rust 依赖和锁文件随实际程序加入。
 

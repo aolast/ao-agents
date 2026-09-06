@@ -32,7 +32,7 @@
 - `scripts/`：用户或维护过程直接调用的工具。hook 的启动包装可跟随 hook 放置，不为扩展名拆开同一组件。
 - `workflows/<name>/`：围绕某个目标组合 prompts、skills 和程序。工作流专属代码就近放置；出现真实复用后再提取。
 
-自制编译型 hooks 使用 Rust。初期一个实际需要的 crate 即可，出现多个共享构建需求的 crates 后再建立 Cargo workspace。输入输出格式、超时和失败行为按宿主工具分别适配。
+Agent hooks 统一使用 Rust 开发，以便分发独立二进制。Git hooks 是仓库维护脚本，放在 `scripts/git-hooks/`。初期一个实际需要的 crate 即可，出现多个共享构建需求的 crates 后再建立 Cargo workspace。输入输出格式、超时和失败行为按宿主工具分别适配。
 
 ## Workflows 与 services
 
