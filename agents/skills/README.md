@@ -1,9 +1,9 @@
 # Skills
 
-未来的 skills 放在 `ao__<skill-name>/`，按目标工具规范包含 `SKILL.md` 和必要资源。当前仅预留目录，没有可安装 skill。
+未来的 skills 放在 `ao-<skill-name>/`，按目标工具规范包含 `SKILL.md` 和必要资源。当前仅预留目录，没有可安装 skill。
 
 基础 skills 各自负责一个清晰职责，顶层 skills 编排调用。两者先放在同一级，命名体现用途。共享标准只维护在基础 skill，编排层描述顺序、依赖与结果如何使用。
 
 新增时明确触发条件、输入、输出、依赖与验证示例。真实安装前核实目标工具的规范和依赖发现方式。
 
-命名、兼容性边界与检查方式统一遵循 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。
+命名、中文为主的编写约定与检查方式统一遵循 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。

@@ -4,10 +4,34 @@
 
 ## 工作流程
 
-1. 从最新 `main` 创建任务分支，理解需求，检查已有内容，确定受影响组件与唯一维护源。
+1. 从最新 `main` 创建短期任务分支，理解需求，检查已有内容，确定受影响组件与唯一维护源。
 2. 完成范围内最小且完整的变更，遵循已有结构，不预建执行器、通用配置语言或构建框架。
 3. 同步更新受影响的使用说明，按下表完成与风险相称的验证。
-4. 检查完整差异，提交到任务分支并创建 PR；CI 通过后由 Ao 在 PR 中决定合并。禁止直接 push 到 `main`，包括管理员。
+4. 检查完整差异，将任务分支整理为单个 commit 后创建 PR；CI 通过后由 Ao 在 PR 中决定合并。禁止直接 push 到 `main`，包括管理员。
+
+## 主干开发与 PR 提交历史
+
+本仓库采用主干开发（trunk-based development），`main` 是唯一长期开发主干。变更使用短期任务分支，保持范围小、及时集成；不建立长期 `develop` 分支或按环境维护开发分支。
+
+所有合入 `main` 的 PR 必须恰好包含 **一个 commit**，在 PR 合并前就满足此要求。不能依赖合并时 squash 来容忍 PR 内保留多个 commits。
+
+- 创建 PR 前整理提交；PR 更新优先 amend 当前 commit，或在整理本任务分支后 squash / rebase 为一个 commit。
+- 同步主干使用 rebase，避免将 `main` merge 到任务分支产生额外 merge commit。
+- 重写已经推送的任务分支后使用 `git push --force-with-lease`，先确认没有覆盖他人提交；禁止对 `main` 强推。
+- 合并使用 squash merge 或 rebase merge，使主干保持线性历史。每次更新后等待 CI 对最新提交通过，再由 Ao 合并并删除已合并的任务分支。
+
+一个 commit 可以包含一到多个紧密相关的 code changes，但仍须围绕单一目的。检查器和单测的分离不要求分成多个 commits。
+
+## Commit message
+
+提交消息遵循 Conventional Commits，统一使用无 scope 的格式：`<type>[!]: <description>`，通常为 `type: description`。type 使用英文；description 以中文为主，保留必要英文术语，清楚说明变更目的。
+
+- 常用 type：`feat` 新功能、`fix` 修复、`docs` 文档、`refactor` 重构、`test` 测试、`ci` CI 配置、`build` 构建与依赖、`chore` 日常维护。
+- 不使用括号中的 scope，不维护 scope 标签系统；需要说明影响范围时，直接写入 description。
+- 不兼容变更使用 `!` 或 `BREAKING CHANGE:` footer，并说明影响和迁移方式。
+- 示例：`feat: 增加代码审查 skill`、`fix: 修复 hook 事件解析失败`、`ci: 检查 PR 仅包含一个 commit`。
+
+PR 标题沿用最终 commit 的标题；squash merge 时核对最终提交消息，保持同一格式。当前通过开发流程与评审遵守此约定，暂不额外引入 commitlint 或 CI job。
 
 ## 架构与实现约定
 
@@ -43,7 +67,7 @@
 
 ## 命名与文档
 
-- Skill 名称使用下文规定的 `ao__` 前缀，其余路径使用 lowercase kebab-case；标准文件名及 Python 测试模块的 `test_*.py` 命名除外。
+- Skill 名称使用下文规定的 `ao-` 前缀，其余路径使用 lowercase kebab-case；标准文件名及 Python 测试模块的 `test_*.py` 命名除外。
 - 说明文档优先使用中文，代码标识符和文件名使用英文；指令语言按使用对象选择。
 - `README.md` 是人类入口，`AGENTS.md` 是 Agent 入口；共同流程只在本文件维护。`CLAUDE.md` 保持指向 `AGENTS.md` 的相对符号链接。
 
@@ -59,11 +83,13 @@
 
 ## Skill 命名与检查
 
-所有本仓库维护的 skill 统一命名为 `ao__<lowercase-kebab-case>`，例如 `ao__code-review`。目录名与 `SKILL.md` YAML frontmatter 的 `name` 必须完全相同，总长度不超过 64 字符。`ao__` 是固定命名空间，后缀必须非空，使用小写字母、数字及分隔词的单个连字符。
+所有本仓库维护的 skill 统一命名为 `ao-<lowercase-kebab-case>`，例如 `ao-code-review`。目录名与 `SKILL.md` YAML frontmatter 的 `name` 必须完全相同，总长度不超过 64 字符。`ao-` 是固定命名空间，后缀必须非空，使用小写字母、数字及分隔词的单个连字符。
 
 检查器扫描 Git 暂存区中所有 `SKILL.md`，包括 plugins 内的 skills。它检查本次将提交的内容，避免工作区里尚未暂存的修复掩盖错误；删除的文件不再检查。目前不提交第三方原版 skills，外部依赖通过安装管理。`SKILL.md` 使用普通文件；插件分发时从维护源打包。
 
-注意：这是本仓库的命名约定。[Agent Skills 标准](https://agentskills.io/specification) 的 `name` 只允许小写字母、数字和连字符，排除了下划线（核实于 2026-09-06）。因此本检查不代表通过标准规范或任意宿主的兼容性验证。接入具体工具时验证 `ao__` 支持情况；若不支持，先讨论明确的命名或分发调整，不默默重命名。
+该命名满足 [Agent Skills 标准](https://agentskills.io/specification) 的名称字符与长度约束。检查器只验证命名及必要的 frontmatter 结构，其他字段与宿主加载行为仍按组件需求验证。安装时遇到同名 skill 应报告冲突，不自动覆盖。
+
+Skill 的 `description`、执行步骤和检查标准以中文为主，保留 code change、scope、API 等必要英文术语。名称、路径、YAML 字段名、代码、命令与原始报错保持英文或原文；不维护逐段中英文重复副本。
 
 ## 本地开发设置
 
@@ -90,13 +116,13 @@ python scripts/check-skill-names.py
 
 ## CI 与 main 保护
 
-`.github/workflows/ci.yml` 在面向 `main` 的 PR 及合并后的 `main` push 上运行。初期只有一个稳定命名的 job：`skill-names`，运行命名检查器单测及仓库实际命名检查。不加路径过滤，保证每个 PR 都产生必需状态；不添加无实际部署对象的 CD、覆盖率门槛或多平台矩阵。
+`.github/workflows/ci.yml` 在面向 `main` 的 PR 及合并后的 `main` push 上运行。只保留两个必要 job：`skill-names` 运行命名检查器单测及仓库实际命名检查；`pr-single-commit` 检查 PR 事件中的 commit 数必须为 1。后者在 `main` push 上无需检查 PR 数量。不加路径过滤，保证每个 PR 都产生必需状态；不添加无实际部署对象的 CD、覆盖率门槛或多平台矩阵。
 
 Agent Rust hooks 出现实际实现时，再增加对应 crate 的必要测试和所需平台的构建分发流程。GitHub workflow 中第三方 actions 固定到 commit SHA，升级通过 PR。
 
-`main` 的目标保护策略保存在 `.github/main-protection.json`：必须经 PR，必须通过 GitHub Actions 的 `skill-names` 检查并跟上最新 `main`；应用于管理员，禁止 force push、删除和绕过 PR。个人仓库不强制另一位 reviewer 的 approval，Ao 通过 PR 完成最终审查和合并。
+`main` 的目标保护策略保存在 `.github/main-protection.json`：必须经 PR，必须通过 GitHub Actions 的 `skill-names` 和 `pr-single-commit` 检查并跟上最新 `main`；保持线性历史；应用于管理员，禁止 force push、删除和绕过 PR。个人仓库不强制另一位 reviewer 的 approval，Ao 通过 PR 完成最终审查和合并。
 
-**配置文件不会自动开启远程保护。** 当前连接没有仓库保护写入接口。本次初始化需要在有仓库管理权限且已登录的 GitHub CLI 环境中，先 checkout 本变更分支，待本 PR 的 CI 运行后执行：
+**配置文件不会自动开启远程保护。** 当前连接没有仓库保护写入接口。需要在有仓库管理权限且已登录的 GitHub CLI 环境中，checkout 包含最新保护配置的分支，待对应 PR 的 CI 运行后执行：
 
 ```sh
 gh api --method PUT repos/aolast/ao-agents/branches/main/protection \

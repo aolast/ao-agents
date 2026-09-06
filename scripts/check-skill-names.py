@@ -9,7 +9,7 @@ from pathlib import Path, PurePosixPath
 import yaml
 
 
-NAME_PATTERN = re.compile(r"ao__[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+NAME_PATTERN = re.compile(r"ao-[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 
 def validate_skill(path, content):
@@ -17,7 +17,7 @@ def validate_skill(path, content):
     errors = []
     directory = PurePosixPath(path).parent.name
     if not NAME_PATTERN.fullmatch(directory) or len(directory) > 64:
-        errors.append("directory must be ao__<lowercase-kebab-case>, at most 64 characters")
+        errors.append("directory must be ao-<lowercase-kebab-case>, at most 64 characters")
     lines = content.splitlines()
     if not lines or lines[0] != "---":
         return errors + ["SKILL.md must start with YAML frontmatter"]
@@ -39,7 +39,7 @@ def validate_skill(path, content):
     if not isinstance(name, yaml.ScalarNode) or name.tag != "tag:yaml.org,2002:str":
         return errors + ["name must be a string"]
     if not NAME_PATTERN.fullmatch(name.value) or len(name.value) > 64:
-        errors.append("name must be ao__<lowercase-kebab-case>, at most 64 characters")
+        errors.append("name must be ao-<lowercase-kebab-case>, at most 64 characters")
     if name.value != directory:
         errors.append("name must match its parent directory")
     return errors
