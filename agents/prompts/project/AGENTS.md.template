@@ -1,0 +1,27 @@
+# {{project_name}}
+
+模板使用说明：填写所有占位符，删除不适用条目和本段，再保存为目标项目使用的指令文件。只记录该项目稳定、必要的约束。
+
+## 项目目的
+
+{{project_purpose}}
+
+## 关键目录与边界
+
+{{important_paths_and_responsibilities}}
+
+## 工作方式
+
+- 先阅读相关实现与使用说明，遵循现有模式。
+- 将变更限制在任务范围内，共享规则引用其唯一维护源。
+- {{project_specific_constraints}}
+
+## 验证命令
+
+{{verified_commands_and_when_to_run_them}}
+
+## 完成条件
+
+- 行为符合需求，相关说明已更新。
+- 执行与变更风险相称的验证，说明未验证部分。
+- {{project_specific_completion_criteria}}
