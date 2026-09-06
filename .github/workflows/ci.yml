@@ -24,3 +24,18 @@ jobs:
         run: python -m unittest discover -s scripts/tests -v
       - name: Check repository skill names
         run: python scripts/check-skill-names.py
+
+  pr-single-commit:
+    name: pr-single-commit
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Require exactly one commit in the PR
+        if: github.event_name == 'pull_request'
+        env:
+          PR_COMMITS: ${{ github.event.pull_request.commits }}
+        run: |
+          if [ "$PR_COMMITS" != "1" ]; then
+            echo "PR must contain exactly one commit; found: $PR_COMMITS. Amend or squash the task branch."
+            exit 1
+          fi
