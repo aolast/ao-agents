@@ -1,13 +1,20 @@
-# Skills
+# Skills 目录
 
-按领域维护可复用的 Agent skills，允许分类子目录。实际 skill 目录包含 `SKILL.md`，以 `ao-` 开头，目录名与 frontmatter 的 `name` 一致；分类目录不受 skill 前缀约束。
+本目录统一索引可复用 skills。零散 skill 直接放在此目录；`software-development/` 按开发活动分组，各分类下放具体 skill 文件夹。
 
-| 领域 | 入口 |
-| --- | --- |
-| 软件开发 | [software-development](software-development/README.md)，11 个 `ao-sdlc-` skills |
+| 目录 | Skill | 用途 |
+| --- | --- | --- |
+| `ao-vocabulary/` | [ao-vocabulary](ao-vocabulary/SKILL.md) | 中英互译、术语选择与个人用语习惯 |
+| `software-development/` | [ao-sdlc-overview](software-development/ao-sdlc-overview/SKILL.md) | 能力目录、选择条件与常见组合 |
+| `software-development/design/` | [ao-sdlc-design](software-development/design/ao-sdlc-design/SKILL.md) | 目标、scope、行为契约、方案与交付拆分 |
+| `software-development/implementation/` | [ao-sdlc-implementation](software-development/implementation/ao-sdlc-implementation/SKILL.md) | 增量实现方法与代码质量标准 |
+| `software-development/implementation/` | [ao-sdlc-workplace-and-git-branch](software-development/implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) | 工作区隔离、保留开发历史与单提交审核的开发习惯 |
+| `software-development/review/` | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 审查范围、问题核实、结论与复核方法 |
+| `software-development/testing/` | [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 验证策略、测试质量与证据边界 |
+| `software-development/work-log/` | [ao-sdlc-work-log](software-development/work-log/ao-sdlc-work-log/SKILL.md) | 轻量 checkpoint 与工作恢复 |
+| `software-development/investigation/` | [ao-sdlc-investigation](software-development/investigation/ao-sdlc-investigation/SKILL.md) | 证据驱动的排查及环境专项方法的入口 |
+| `software-development/refactoring/` | [ao-sdlc-refactoring](software-development/refactoring/ao-sdlc-refactoring/SKILL.md) | 保持行为的结构调整方法 |
+| `software-development/performance-optimization/` | [ao-sdlc-performance-optimization](software-development/performance-optimization/ao-sdlc-performance-optimization/SKILL.md) | 指标、瓶颈、优化收益与代价 |
+| `software-development/communication/` | [ao-sdlc-communication](software-development/communication/ao-sdlc-communication/SKILL.md) | 工程表达、版本参照与读者需要的信息 |
 
-领域 README 维护职责、边界和组织方式；运行时入口 skill 负责按任务选择方法。共享标准只维护一份，组合调用不构成固定的层级或强制流水线。
-
-新增领域或环境专项内容时按实际需求建立目录；源码嵌套不代表宿主自动递归发现。分发时包含所引用的 skills，验证安装布局和依赖解析。
-
-命名、语言与维护流程遵循 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。当前内容为仓库中的初版源码，尚未安装到特定 Agent 软件。
+软件开发任务从 [ao-sdlc-overview](software-development/ao-sdlc-overview/SKILL.md) 选择方法。命名、组织与分发规则见 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。
