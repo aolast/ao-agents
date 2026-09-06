@@ -15,11 +15,11 @@ description: 组织软件设计或代码变更的独立审查、自审与修正�
 
 | 判断内容 | 标准维护源 |
 | --- | --- |
-| 目标、scope、方案、契约、交付拆分 | [design](../ao-sdlc-design/SKILL.md) |
-| 实现结构、依赖、错误和资源处理 | [implementation](../ao-sdlc-implementation/SKILL.md) |
-| 测试质量、验证证据与缺口 | [testing](../ao-sdlc-testing/SKILL.md) |
-| 重构所需的行为保持边界 | [refactoring](../ao-sdlc-refactoring/SKILL.md) |
-| 性能收益及测量可比性 | [performance-optimization](../ao-sdlc-performance-optimization/SKILL.md) |
+| 目标、scope、方案、契约、交付拆分 | [design](../../design/ao-sdlc-design/SKILL.md) |
+| 实现结构、依赖、错误和资源处理 | [implementation](../../implementation/ao-sdlc-implementation/SKILL.md) |
+| 测试质量、验证证据与缺口 | [testing](../../testing/ao-sdlc-testing/SKILL.md) |
+| 重构所需的行为保持边界 | [refactoring](../../refactoring/ao-sdlc-refactoring/SKILL.md) |
+| 性能收益及测量可比性 | [performance-optimization](../../performance-optimization/ao-sdlc-performance-optimization/SKILL.md) |
 
 引用时执行当前审查所需的判断，不反向启动实现或另一轮完整审查。仅设计稿的审查不要求已有代码和测试结果，可以要求可执行的验证方案。
 
@@ -32,7 +32,7 @@ description: 组织软件设计或代码变更的独立审查、自审与修正�
 
 ## 交付与复核
 
-使用 [communication](../ao-sdlc-communication/SKILL.md) 撰写意见。每个实质问题简要包含：位置或版本、条件、后果、证据，以及必要时的修正方向。标明阻塞问题、非阻塞建议和待确认信息；有项目严重度标准时沿用，不自建复杂分级。
+使用 [communication](../../communication/ao-sdlc-communication/SKILL.md) 撰写意见。每个实质问题简要包含：位置或版本、条件、后果、证据，以及必要时的修正方向。标明阻塞问题、非阻塞建议和待确认信息；有项目严重度标准时沿用，不自建复杂分级。
 
 没有实质问题时明确说明未发现阻塞项，并列出重要的未验证范围；不要求固定数量的 findings。整体结论与事实一致，不将“未发现问题”写成对所有环境的保证。
 

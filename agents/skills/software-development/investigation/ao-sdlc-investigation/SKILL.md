@@ -27,9 +27,9 @@ description: 调查软件问题的现象、发生条件和原因，并选择与�
 
 ## 结论与衔接
 
-说明现象、支持结论的证据、已排除的高价值假设、剩余未知项以及建议行动。修复范围和方案使用 [design](../ao-sdlc-design/SKILL.md)，回归证据使用 [testing](../ao-sdlc-testing/SKILL.md)；被 testing 引用时仅处理未解释的失败，不再启动整套测试流程。
+说明现象、支持结论的证据、已排除的高价值假设、剩余未知项以及建议行动。修复范围和方案使用 [design](../../design/ao-sdlc-design/SKILL.md)，回归证据使用 [testing](../../testing/ao-sdlc-testing/SKILL.md)；被 testing 引用时仅处理未解释的失败，不再启动整套测试流程。
 
-调查很可能跨会话时使用 [work-log](../ao-sdlc-work-log/SKILL.md) 保存关键证据和当前假设。详细环境实验方法在出现稳定复用需求后再新增专项子 skill；不将具体环境的偶然限制上升为通用规则。
+调查很可能跨会话时使用 [work-log](../../work-log/ao-sdlc-work-log/SKILL.md) 保存关键证据和当前假设。详细环境实验方法在出现稳定复用需求后再新增专项子 skill；不将具体环境的偶然限制上升为通用规则。
 
 ## 边界示例
 
