@@ -85,7 +85,11 @@ PR 标题沿用最终 commit 的标题；squash merge 时核对最终提交消�
 
 所有本仓库维护的 skill 统一命名为 `ao-<lowercase-kebab-case>`，例如 `ao-code-review`。目录名与 `SKILL.md` YAML frontmatter 的 `name` 必须完全相同，总长度不超过 64 字符。`ao-` 是固定命名空间，后缀必须非空，使用小写字母、数字及分隔词的单个连字符。
 
-按领域组织 `agents/skills/`，允许多层分类目录；软件开发放在 `agents/skills/software-development/`，其 skills 统一以 `ao-sdlc-` 开头。分类目录不需要 skill 前缀，只有包含 `SKILL.md` 的实际 skill 目录需要与 `name` 匹配。职责与依赖方式见 [软件开发领域说明](agents/skills/software-development/README.md)。
+零散 skill 直接放在 `agents/skills/<skill 名称>/`，有实际分组需要时再增加分类目录。软件开发放在 `agents/skills/software-development/`，其 skills 统一以 `ao-sdlc-` 开头；overview 保留在该目录下，其余使用 `<活动目录>/<skill 名称>/SKILL.md`。分类目录不需要 skill 前缀，也不直接放 `SKILL.md`；只有实际 skill 目录需要与 `name` 匹配。
+
+`agents/skills/` 内只维护一份 [README 目录](agents/skills/README.md)，列出分类用途与 skill 入口，不为领域、活动或单个 skill 另建 README。具体方法和边界在对应 `SKILL.md` 维护，共同维护规则放在本文件。
+
+分发相互引用的 skills 时，保留相对目录布局，或确保宿主能按名称找到全部依赖；只复制 overview 不足以分发整套能力。源码嵌套不保证工具自动发现，安装方式与加载行为需按目标宿主验证。
 
 检查器扫描 Git 暂存区中所有 `SKILL.md`，包括领域子目录及 plugins 内的 skills。它检查本次将提交的内容，避免工作区里尚未暂存的修复掩盖错误；删除的文件不再检查。目前不提交第三方原版 skills，外部依赖通过安装管理。`SKILL.md` 使用普通文件；插件分发时从维护源打包。
 
