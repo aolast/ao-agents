@@ -17,6 +17,7 @@ description: 软件开发 skills 的总入口。用于开始跨多个开发活�
 | 审查设计或代码、复核问题和修正 | [ao-sdlc-review](../review/ao-sdlc-review/SKILL.md) |
 | 撰写设计说明、commit、PR/CR、评论或进度 | [ao-sdlc-communication](../communication/ao-sdlc-communication/SKILL.md) |
 | 暂停、交接、长任务 checkpoint 或恢复工作 | [ao-sdlc-work-log](../work-log/ao-sdlc-work-log/SKILL.md) |
+| 建立开发分支、生成单提交审核分支或处理审核返工 | [ao-sdlc-branch-workflow](../implementation/ao-sdlc-branch-workflow/SKILL.md) |
 | 原因未知，需要复现、收集证据或调查环境 | [ao-sdlc-investigation](../investigation/ao-sdlc-investigation/SKILL.md) |
 | 保持外部行为，改善内部结构 | [ao-sdlc-refactoring](../refactoring/ao-sdlc-refactoring/SKILL.md) |
 | 改善延迟、吞吐、资源占用或成本 | [ao-sdlc-performance-optimization](../performance-optimization/ao-sdlc-performance-optimization/SKILL.md) |

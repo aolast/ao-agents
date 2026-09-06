@@ -36,6 +36,6 @@ jobs:
           PR_COMMITS: ${{ github.event.pull_request.commits }}
         run: |
           if [ "$PR_COMMITS" != "1" ]; then
-            echo "PR must contain exactly one commit; found: $PR_COMMITS. Amend or squash the task branch."
+            echo "PR must contain exactly one commit; found: $PR_COMMITS. Rebuild or amend the review branch from dev; preserve dev history."
             exit 1
           fi

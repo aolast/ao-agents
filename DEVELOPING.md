@@ -4,21 +4,27 @@
 
 ## 工作流程
 
-1. 从最新 `main` 创建短期任务分支，理解需求，检查已有内容，确定受影响组件与唯一维护源。
+1. 从最新 `main` 创建短期开发分支 `dev/<任务名>`，理解需求，检查已有内容，确定受影响组件与唯一维护源。
 2. 完成范围内最小且完整的变更，遵循已有结构，不预建执行器、通用配置语言或构建框架。
 3. 同步更新受影响的使用说明，按下表完成与风险相称的验证。
-4. 检查完整差异，将任务分支整理为单个 commit 后创建 PR；CI 通过后由 Ao 在 PR 中决定合并。禁止直接 push 到 `main`，包括管理员。
+4. 检查完整差异，将开发成果 squash 到同名审核分支 `review/<任务名>`，以单个 commit 创建 PR；CI 通过后由 Ao 在 PR 中决定合并。禁止直接 push 到 `main`，包括管理员。
 
-## 主干开发与 PR 提交历史
+## 主干开发与双分支流程
 
-本仓库采用主干开发（trunk-based development），`main` 是唯一长期开发主干。变更使用短期任务分支，保持范围小、及时集成；不建立长期 `develop` 分支或按环境维护开发分支。
+本仓库采用主干开发（trunk-based development），`main` 是唯一长期开发主干。每项任务使用一对短期分支，保持范围小、及时集成；`dev/` 与 `review/` 是分支命名空间，不是长期 `develop` 分支或环境分支。
+
+| 分支 | 用途与提交历史 |
+| --- | --- |
+| `dev/<任务名>` | 从最新目标分支开始开发，可按需要多次 commit，保留开发过程中的版本与审核修正记录。 |
+| `review/<任务名>` | 准备送审时创建，与开发分支使用同一任务名；相对于当时最新的目标分支恰好多一个 commit，承载开发成果的完整 squash 快照。PR 从此分支发起。 |
+
+本仓库目标分支默认为 `main`，开发与审核前缀分别采用 `dev/`、`review/`。分支名例如 `dev/dual-branch-workflow` 与 `review/dual-branch-workflow`。
 
 所有合入 `main` 的 PR 必须恰好包含 **一个 commit**，在 PR 合并前就满足此要求。不能依赖合并时 squash 来容忍 PR 内保留多个 commits。
 
-- 创建 PR 前整理提交；PR 更新优先 amend 当前 commit，或在整理本任务分支后 squash / rebase 为一个 commit。
-- 同步主干使用 rebase，避免将 `main` merge 到任务分支产生额外 merge commit。
-- 重写已经推送的任务分支后使用 `git push --force-with-lease`，先确认没有覆盖他人提交；禁止对 `main` 强推。
-- 合并使用 squash merge 或 rebase merge，使主干保持线性历史。每次更新后等待 CI 对最新提交通过，再由 Ao 合并并删除已合并的任务分支。
+首次送审、审核返工、同步目标分支、文件树核对及安全改写的操作方法统一维护在 [ao-sdlc-branch-workflow](agents/skills/software-development/implementation/ao-sdlc-branch-workflow/SKILL.md)，执行这些活动时读取并遵循。本仓库采用该方法，保留 dev 的增量历史，持续更新原 review 分支和 PR。
+
+每次更新后等待 CI 对最新审核提交通过，再由 Ao 使用 squash merge 或 rebase merge，保持主干线性历史。合并后可删除 review 分支；dev 按开发记录的保留需要归档或清理，清理前确认没有尚未送审的修改。禁止对 `main` 强推。
 
 一个 commit 可以包含一到多个紧密相关的 code changes，但仍须围绕单一目的。检查器和单测的分离不要求分成多个 commits。
 
