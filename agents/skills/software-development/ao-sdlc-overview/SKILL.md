@@ -7,6 +7,8 @@ description: 软件开发 skills 的总入口。用于开始跨多个开发活�
 
 先读取目标项目的 `AGENTS.md`、开发入口及与任务有关的记录。确认用户目标、当前代码状态和已有授权；按需要查阅真实实现，文档过期时不要把它当作已验证事实。
 
+开始仓库修改或会写入文件的验证前，先应用 [workplace-and-git-branch](../implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) 的工作区与环境条件；已经明确且仍有效的工作区安排可复用。此时只准备工作区，不自动执行送审步骤。
+
 ## 选择方法
 
 | 当前需要 | 读取的 skill |
@@ -17,6 +19,7 @@ description: 软件开发 skills 的总入口。用于开始跨多个开发活�
 | 审查设计或代码、复核问题和修正 | [ao-sdlc-review](../review/ao-sdlc-review/SKILL.md) |
 | 撰写设计说明、commit、PR/CR、评论或进度 | [ao-sdlc-communication](../communication/ao-sdlc-communication/SKILL.md) |
 | 暂停、交接、长任务 checkpoint 或恢复工作 | [ao-sdlc-work-log](../work-log/ao-sdlc-work-log/SKILL.md) |
+| 准备隔离工作区、操作 Git 分支或生成单提交审核分支 | [ao-sdlc-workplace-and-git-branch](../implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) |
 | 原因未知，需要复现、收集证据或调查环境 | [ao-sdlc-investigation](../investigation/ao-sdlc-investigation/SKILL.md) |
 | 保持外部行为，改善内部结构 | [ao-sdlc-refactoring](../refactoring/ao-sdlc-refactoring/SKILL.md) |
 | 改善延迟、吞吐、资源占用或成本 | [ao-sdlc-performance-optimization](../performance-optimization/ao-sdlc-performance-optimization/SKILL.md) |

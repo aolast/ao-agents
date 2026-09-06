@@ -9,6 +9,7 @@
 | 根目录（总入口） | [ao-sdlc-overview](ao-sdlc-overview/SKILL.md) | 能力目录、选择条件与常见组合 |
 | `design/` | [ao-sdlc-design](design/ao-sdlc-design/SKILL.md) | 目标、scope、行为契约、方案与交付拆分 |
 | `implementation/` | [ao-sdlc-implementation](implementation/ao-sdlc-implementation/SKILL.md) | 增量实现方法与代码质量标准 |
+| `implementation/` | [ao-sdlc-workplace-and-git-branch](implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) | 工作区隔离、保留开发历史与单提交审核的开发习惯 |
 | `review/` | [ao-sdlc-review](review/ao-sdlc-review/SKILL.md) | 审查范围、问题核实、结论与复核方法 |
 | `testing/` | [ao-sdlc-testing](testing/ao-sdlc-testing/SKILL.md) | 验证策略、测试质量与证据边界 |
 | `work-log/` | [ao-sdlc-work-log](work-log/ao-sdlc-work-log/SKILL.md) | 轻量 checkpoint 与工作恢复 |
@@ -49,7 +50,7 @@ communication 与 work-log 按实际表达和连续性需要使用，不是每�
 
 ## 初版状态与后续讨论
 
-10 个 `SKILL.md` 均已编写，包含选择描述、方法、产出与边界示例；尚需结合 Ao 的真实工作进一步迭代。验证情况以关联 PR 的记录为准，不把格式检查当成长期使用效果证明。
+11 个 `SKILL.md` 均已编写，包含选择描述、方法、产出与边界示例；尚需结合 Ao 的真实工作进一步迭代。验证情况以关联 PR 的记录为准，不把格式检查当成长期使用效果证明。
 
 沟通 skill 已参考用户指定的两篇文章，来源与取舍就近记录在其文件中。后续重点是规则是否改变了正确决策，以及是否误伤简单任务；避免靠不断增加硬性步骤修补个别案例。
 
