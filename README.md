@@ -7,6 +7,7 @@ Ao 个人使用 AI Agents 的知识、经验、指令、配置与自动化仓库
 - **人类**：从本文件了解用途与目录；开发和维护前阅读 [DEVELOPING.md](DEVELOPING.md)。
 - **Agents**：从 [AGENTS.md](AGENTS.md) 进入，同样遵循 `DEVELOPING.md`。`CLAUDE.md` 是指向 `AGENTS.md` 的符号链接。
 - **架构与经验**：查看 [docs](docs/README.md)。
+- **软件开发 skills**：查看 [SDLC skills 目录](agents/skills/software-development/README.md)。
 
 ## 目录
 
@@ -22,9 +23,3 @@ Ao 个人使用 AI Agents 的知识、经验、指令、配置与自动化仓库
 | `docs/` | 架构、知识、经验、实验与设计决策 |
 
 仓库文件是维护源，目标软件的加载位置由组件安装说明确定。目录存在不代表已经安装或生效。
-
-## 当前状态
-
-已建立目录骨架、主干开发流程、项目指令模板、ao- 命名检查、Git hook 与最小 CI（命名和 PR 单 commit 检查）。分支保护配置和启用步骤见 `DEVELOPING.md`。已编写 [软件开发领域 README 与 10 个 SDLC skills 初版](agents/skills/software-development/README.md)。尚未提供插件、具体软件配置、Agent hooks 或工作流实现，也未验证这些 skills 的宿主安装方式。远程仓库：[aolast/ao-agents](https://github.com/aolast/ao-agents)，保持 private。
-
-下一步逐个讨论和试用 SDLC skills，按真实任务改进；软件接入、安装脚本和环境专项 skills 随需求补充。
