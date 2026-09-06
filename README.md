@@ -25,6 +25,6 @@ Ao 个人使用 AI Agents 的知识、经验、指令、配置与自动化仓库
 
 ## 当前状态
 
-已建立目录骨架、主干开发流程、项目指令模板、ao- 命名检查、Git hook 与最小 CI（命名和 PR 单 commit 检查）。分支保护配置和启用步骤见 `DEVELOPING.md`。尚未实现可安装插件、具体软件配置、hooks 或工作流。远程仓库：[aolast/ao-agents](https://github.com/aolast/ao-agents)，保持 private。
+已建立目录骨架、主干开发流程、项目指令模板、ao- 命名检查、Git hook 与最小 CI（命名和 PR 单 commit 检查）。分支保护配置和启用步骤见 `DEVELOPING.md`。已编写 [软件开发领域 README 与 10 个 SDLC skills 初版](agents/skills/software-development/README.md)。尚未提供插件、具体软件配置、Agent hooks 或工作流实现，也未验证这些 skills 的宿主安装方式。远程仓库：[aolast/ao-agents](https://github.com/aolast/ao-agents)，保持 private。
 
-下一步选择首个实际使用的 Agent 软件，落地个人指令和原生配置，再按需求增加 skills、安装脚本与 hooks。
+下一步逐个讨论和试用 SDLC skills，按真实任务改进；软件接入、安装脚本和环境专项 skills 随需求补充。
