@@ -4,7 +4,7 @@
 
 | 领域 | 入口 |
 | --- | --- |
-| 软件开发 | [software-development](software-development/README.md)，10 个 `ao-sdlc-` skills 初版 |
+| 软件开发 | [software-development](software-development/README.md)，11 个 `ao-sdlc-` skills |
 
 领域 README 维护职责、边界和组织方式；运行时入口 skill 负责按任务选择方法。共享标准只维护一份，组合调用不构成固定的层级或强制流水线。
 

@@ -11,15 +11,16 @@ description: 软件开发 skills 的总入口。用于开始跨多个开发活�
 
 | 当前需要 | 读取的 skill |
 | --- | --- |
-| 明确行为、scope、方案或交付拆分 | [ao-sdlc-design](../ao-sdlc-design/SKILL.md) |
-| 按已知方案完成修改或检查实现质量 | [ao-sdlc-implementation](../ao-sdlc-implementation/SKILL.md) |
-| 选择测试、验证行为、判断证据是否充分 | [ao-sdlc-testing](../ao-sdlc-testing/SKILL.md) |
-| 审查设计或代码、复核问题和修正 | [ao-sdlc-review](../ao-sdlc-review/SKILL.md) |
-| 撰写设计说明、commit、PR/CR、评论或进度 | [ao-sdlc-communication](../ao-sdlc-communication/SKILL.md) |
-| 暂停、交接、长任务 checkpoint 或恢复工作 | [ao-sdlc-work-log](../ao-sdlc-work-log/SKILL.md) |
-| 原因未知，需要复现、收集证据或调查环境 | [ao-sdlc-investigation](../ao-sdlc-investigation/SKILL.md) |
-| 保持外部行为，改善内部结构 | [ao-sdlc-refactoring](../ao-sdlc-refactoring/SKILL.md) |
-| 改善延迟、吞吐、资源占用或成本 | [ao-sdlc-performance-optimization](../ao-sdlc-performance-optimization/SKILL.md) |
+| 明确行为、scope、方案或交付拆分 | [ao-sdlc-design](../design/ao-sdlc-design/SKILL.md) |
+| 按已知方案完成修改或检查实现质量 | [ao-sdlc-implementation](../implementation/ao-sdlc-implementation/SKILL.md) |
+| 选择测试、验证行为、判断证据是否充分 | [ao-sdlc-testing](../testing/ao-sdlc-testing/SKILL.md) |
+| 审查设计或代码、复核问题和修正 | [ao-sdlc-review](../review/ao-sdlc-review/SKILL.md) |
+| 撰写设计说明、commit、PR/CR、评论或进度 | [ao-sdlc-communication](../communication/ao-sdlc-communication/SKILL.md) |
+| 暂停、交接、长任务 checkpoint 或恢复工作 | [ao-sdlc-work-log](../work-log/ao-sdlc-work-log/SKILL.md) |
+| 建立开发分支、生成单提交审核分支或处理审核返工 | [ao-sdlc-branch-workflow](../implementation/ao-sdlc-branch-workflow/SKILL.md) |
+| 原因未知，需要复现、收集证据或调查环境 | [ao-sdlc-investigation](../investigation/ao-sdlc-investigation/SKILL.md) |
+| 保持外部行为，改善内部结构 | [ao-sdlc-refactoring](../refactoring/ao-sdlc-refactoring/SKILL.md) |
+| 改善延迟、吞吐、资源占用或成本 | [ao-sdlc-performance-optimization](../performance-optimization/ao-sdlc-performance-optimization/SKILL.md) |
 
 按名称定位当前需要的 skill；本源码树可用相对链接读取。缺失引用时说明限制，继续可做的部分，不假装已加载。被引用 skill 应用其当前职责，不再反向启动整套流程；已读取的规则可以复用。
 
