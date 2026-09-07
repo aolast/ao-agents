@@ -18,9 +18,11 @@
 - 创建 PR 前整理提交；PR 更新优先 amend 当前 commit，或在整理本任务分支后 squash / rebase 为一个 commit。
 - 同步主干使用 rebase，避免将 `main` merge 到任务分支产生额外 merge commit。
 - 重写已经推送的任务分支后使用 `git push --force-with-lease`，先确认没有覆盖他人提交；禁止对 `main` 强推。
-- 合并使用 squash merge 或 rebase merge，使主干保持线性历史。每次更新后等待 CI 对最新提交通过，再由 Ao 合并并删除已合并的任务分支。
+- 合并使用 squash merge 或 rebase merge，使主干保持线性历史。每次更新后等待 CI 对最新提交通过，再由 Ao 合并；确认任务成果合入目标分支 `main` 后，任务执行者及时清理本地和远端任务分支，包括 dev、review、临时候选分支及备份引用。清理前核实没有未交付修改或其他工作区占用，不为已完成任务长期保留或归档开发分支。
 
 一个 commit 可以包含一到多个紧密相关的 code changes，但仍须围绕单一目的。检查器和单测的分离不要求分成多个 commits。
+
+GitHub 仓库启用 **Automatically delete head branches**，在 PR 合并后自动删除远端审核分支；对应 dev、本地分支和临时引用仍由任务执行者核实并清理。[GitHub 自动删除分支说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches)（核实于 2026-09-07）。
 
 ## Commit message
 

@@ -1,6 +1,6 @@
 ---
 name: ao-sdlc-communication
-description: 软件开发中的共用表达原则。用于 commit message、review request、设计说明、评审意见和进度沟通，区分 code change、评审请求及平台术语，明确变更前后的版本参照、事实与证据。
+description: 软件开发中的共用表达原则。用于 commit message、review request、设计说明、评审意见和进度沟通，区分 code change、评审请求、分支称呼及平台术语，明确变更前后的版本参照、事实与证据。
 ---
 
 # 工程沟通与写作
@@ -10,6 +10,7 @@ description: 软件开发中的共用表达原则。用于 commit message、revi
 - **Code change**：描述代码变更本身时使用 `code change`（复数 `code changes`），不用 PR/CR/MR 代指代码变更或实现工作；例如“完成这个 code change”。
 - **Review request**：`review request` 是送审请求的抽象概念，一个请求可以包含一到多个紧密相关的 code changes；区分变更内容与承载它的评审请求。
 - **平台叫法**：在具体平台或团队语境中沿用实际名称，例如 GitHub 的 PR、GitLab 的 MR，以及公司内部系统的叫法；无需统一替换成 review request。编号、命令和原文引用保留实际名称。
+- **目标分支**：描述 code change 的合入位置时使用“目标分支”（target branch），不用 `mainline` 代指；提到具体分支时使用实际名称。区分目标分支、仓库默认分支和 `main` 等具体分支名，不把它们当作同义词。命令参数、标识符和原文引用保留原样。
 - **项目约定**：采用目标项目的语言和格式约定；没有约定时以清晰、简短的事实表达为准。
 
 ## 版本与断言
