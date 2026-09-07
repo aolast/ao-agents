@@ -10,7 +10,7 @@
 | `software-development/` | [ao-sdlc-overview](software-development/ao-sdlc-overview/SKILL.md) | 能力目录、选择条件与常见组合 |
 | `software-development/design/` | [ao-sdlc-design](software-development/design/ao-sdlc-design/SKILL.md) | 目标、scope、行为契约、方案与交付拆分 |
 | `software-development/implementation/` | [ao-sdlc-implementation](software-development/implementation/ao-sdlc-implementation/SKILL.md) | 增量实现方法与代码质量标准 |
-| `software-development/implementation/` | [ao-sdlc-workplace-and-git-branch](software-development/implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) | 工作区隔离、保留开发历史与单提交审核的开发习惯 |
+| `software-development/implementation/` | [ao-sdlc-workplace-and-git-branch](software-development/implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) | 工作区隔离、任务期间保留开发历史、单提交审核与合并后清理 |
 | `software-development/review/` | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 审查范围、问题核实、结论与复核方法 |
 | `software-development/testing/` | [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 验证策略、测试质量与证据边界 |
 | `software-development/work-log/` | [ao-sdlc-work-log](software-development/work-log/ao-sdlc-work-log/SKILL.md) | 轻量 checkpoint 与工作恢复 |
