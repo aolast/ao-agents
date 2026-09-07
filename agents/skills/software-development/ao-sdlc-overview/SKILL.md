@@ -17,7 +17,8 @@ description: 软件开发 skills 的总入口。用于开始跨多个开发活�
 | 按已知方案完成修改或检查实现质量 | [ao-sdlc-implementation](../implementation/ao-sdlc-implementation/SKILL.md) |
 | 选择测试、验证行为、判断证据是否充分 | [ao-sdlc-testing](../testing/ao-sdlc-testing/SKILL.md) |
 | 审查设计或代码、复核问题和修正 | [ao-sdlc-review](../review/ao-sdlc-review/SKILL.md) |
-| 撰写设计说明、commit、PR/CR、评论或进度 | [ao-sdlc-communication](../communication/ao-sdlc-communication/SKILL.md) |
+| 撰写设计说明、review request、评论或进度，或统一术语与版本表达 | [ao-sdlc-communication](../communication/ao-sdlc-communication/SKILL.md) |
+| 撰写或审查 commit message | [ao-sdlc-how-to-write-commit-message](../communication/ao-sdlc-how-to-write-commit-message/SKILL.md) |
 | 暂停、交接、长任务 checkpoint 或恢复工作 | [ao-sdlc-work-log](../work-log/ao-sdlc-work-log/SKILL.md) |
 | 准备隔离工作区、操作 Git 分支或生成单提交审核分支 | [ao-sdlc-workplace-and-git-branch](../implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) |
 | 原因未知，需要复现、收集证据或调查环境 | [ao-sdlc-investigation](../investigation/ao-sdlc-investigation/SKILL.md) |
