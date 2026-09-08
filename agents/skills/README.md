@@ -6,6 +6,7 @@
 
 | 目录 | Skill | 用途 |
 | --- | --- | --- |
+| `ao-create-agent-skill/` | [ao-create-agent-skill](ao-create-agent-skill/SKILL.md) | 创建或维护个人 skill 的命名、语言与引用补充要求 |
 | `ao-vocabulary/` | [ao-vocabulary](ao-vocabulary/SKILL.md) | 中英互译、术语选择与个人用语习惯 |
 | `software-development/` | [ao-sdlc-overview](software-development/ao-sdlc-overview/SKILL.md) | 能力目录、选择条件与常见组合 |
 | `software-development/design/` | [ao-sdlc-design](software-development/design/ao-sdlc-design/SKILL.md) | 目标、scope、行为契约、方案与交付拆分 |
