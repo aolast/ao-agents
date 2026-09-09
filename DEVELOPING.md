@@ -87,11 +87,11 @@ PR 标题沿用最终 commit 的标题；squash merge 时核对最终提交消�
 
 所有本仓库维护的 skill 统一命名为 `ao-<lowercase-kebab-case>`，例如 `ao-code-review`。目录名与 `SKILL.md` YAML frontmatter 的 `name` 必须完全相同，总长度不超过 64 字符。`ao-` 是固定命名空间，后缀必须非空，使用小写字母、数字及分隔词的单个连字符。
 
-零散 skill 直接放在 `agents/skills/<skill 名称>/`，有实际分组需要时再增加分类目录。软件开发放在 `agents/skills/software-development/`，其 skills 统一以 `ao-sdlc-` 开头；overview 保留在该目录下，其余使用 `<活动目录>/<skill 名称>/SKILL.md`。分类目录不需要 skill 前缀，也不直接放 `SKILL.md`；只有实际 skill 目录需要与 `name` 匹配。
+零散 skill 直接放在 `agents/skills/<skill 名称>/`，有实际分组需要时再增加分类目录。软件开发放在 `agents/skills/software-development/`，其 skills 统一以 `ao-sdlc-` 开头；使用 `<活动目录>/<skill 名称>/SKILL.md`。分类目录不需要 skill 前缀，也不直接放 `SKILL.md`；只有实际 skill 目录需要与 `name` 匹配。
 
-`agents/skills/` 内只维护一份 [README 目录](agents/skills/README.md)，列出分类用途与 skill 入口，不为领域、活动或单个 skill 另建 README。具体方法和边界在对应 `SKILL.md` 维护，共同维护规则放在本文件。
+`agents/skills/` 内只维护一份 [README 目录](agents/skills/README.md)，目录区块由脚本读取各 skill 的 frontmatter `name` 与 `description` 生成，不手工维护目录行，也不为领域、活动或单个 skill 另建 README。标记区块外的分类说明仍在 README 中维护。具体方法和边界在对应 `SKILL.md` 维护，共同维护规则放在本文件。
 
-分发相互引用的 skills 时，保留相对目录布局，或确保宿主能按名称找到全部依赖；只复制 overview 不足以分发整套能力。源码嵌套不保证工具自动发现，安装方式与加载行为需按目标宿主验证。
+根据各 skill 的名称和描述选择当前需要的能力，不设置通用的 overview 路由层。需要分发编排能力时，确保目标环境能按名称找到被引用的 skills；源码嵌套不保证工具自动发现，安装方式与加载行为需按目标宿主验证。
 
 检查器扫描 Git 暂存区中所有 `SKILL.md`，包括领域子目录及 plugins 内的 skills。它检查本次将提交的内容，避免工作区里尚未暂存的修复掩盖错误；删除的文件不再检查。目前不提交第三方原版 skills，外部依赖通过安装管理。`SKILL.md` 使用普通文件；插件分发时从维护源打包。
 
@@ -113,18 +113,27 @@ python scripts/install-git-hooks.py --apply
 
 安装器默认预览，只修改当前仓库的 `core.hooksPath`；发现已有 hooks 或不同路径则停止，保留已有设置。重复执行不重复安装。撤销本次设置使用 `git config --local --unset core.hooksPath`。Git clone 不会自动启用自定义 hooks，每份 checkout 需要设置一次。
 
-提交前 `pre-commit` 调用共享命名检查器。手动验证与 CI 使用相同命令：
+提交前 `pre-commit` 先检查 skill 命名，再从暂存区生成 README 目录并自动暂存该文件。生成仅覆盖目录标记区块，保留说明文字；若目录需要更新且 README 还有未暂存修改，hook 停止，先暂存或另行保存这些修改再提交。需要生成目录时，使用 `git add` 后的普通 `git commit` 或 `git commit -a`；带路径参数的提交使用临时暂存区，hook 会在写入前停止，避免提交后主暂存区仍保留旧目录。
+
+手动生成同样会更新并暂存 README：
+
+```sh
+python scripts/generate-skill-catalog.py
+```
+
+手动验证与 CI 使用以下命令；目录检查不会修改文件或暂存区：
 
 ```sh
 python -m unittest discover -s scripts/tests -v
 python scripts/check-skill-names.py
+python scripts/generate-skill-catalog.py --check
 ```
 
-先 `git add` 待检查文件。检查器读取整个暂存区并递归覆盖领域目录；单测中的临时数据验证规则确实能拦截错误。Git hook 可被跳过，服务端必需的 CI 检查才是合并关卡。
+先 `git add` 待检查文件。命名检查读取整个暂存区并递归覆盖领域目录及 plugins；目录生成只读取 `agents/skills/` 下已暂存的 skills，按路径排序，删除的 skill 不再出现。CI 检查已提交目录与 frontmatter 是否一致；单测覆盖生成结果、暂存区边界与 hook 行为。Git hook 可被跳过，服务端必需的 CI 检查才是合并关卡。
 
 ## CI 与 main 保护
 
-`.github/workflows/ci.yml` 在面向 `main` 的 PR 及合并后的 `main` push 上运行。只保留两个必要 job：`skill-names` 运行命名检查器单测及仓库实际命名检查；`pr-single-commit` 检查 PR 事件中的 commit 数必须为 1。后者在 `main` push 上无需检查 PR 数量。不加路径过滤，保证每个 PR 都产生必需状态；不添加无实际部署对象的 CD、覆盖率门槛或多平台矩阵。
+`.github/workflows/ci.yml` 在面向 `main` 的 PR 及合并后的 `main` push 上运行。只保留两个必要 job：`skill-names` 运行脚本单测、仓库实际命名检查及目录一致性检查；`pr-single-commit` 检查 PR 事件中的 commit 数必须为 1。后者在 `main` push 上无需检查 PR 数量。不加路径过滤，保证每个 PR 都产生必需状态；不添加无实际部署对象的 CD、覆盖率门槛或多平台矩阵。
 
 Agent Rust hooks 出现实际实现时，再增加对应 crate 的必要测试和所需平台的构建分发流程。GitHub workflow 中第三方 actions 固定到 commit SHA，升级通过 PR。
 

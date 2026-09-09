@@ -3,6 +3,9 @@ set -eu
 root=$(git rev-parse --show-toplevel)
 cd "$root"
 if [ -x "$root/.venv/bin/python3" ]; then
-    exec "$root/.venv/bin/python3" scripts/check-skill-names.py
+    python="$root/.venv/bin/python3"
+else
+    python=python3
 fi
-exec python3 scripts/check-skill-names.py
+"$python" scripts/check-skill-names.py
+exec "$python" scripts/generate-skill-catalog.py
