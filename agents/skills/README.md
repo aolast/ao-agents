@@ -18,7 +18,7 @@
 | `software-development/investigation/` | [ao-sdlc-investigation](software-development/investigation/ao-sdlc-investigation/SKILL.md) | 证据驱动的排查及环境专项方法的入口 |
 | `software-development/refactoring/` | [ao-sdlc-refactoring](software-development/refactoring/ao-sdlc-refactoring/SKILL.md) | 保持行为的结构调整方法 |
 | `software-development/performance-optimization/` | [ao-sdlc-performance-optimization](software-development/performance-optimization/ao-sdlc-performance-optimization/SKILL.md) | 指标、瓶颈、优化收益与代价 |
-| `software-development/communication/` | [ao-sdlc-communication](software-development/communication/ao-sdlc-communication/SKILL.md) | 共用术语、变更前后参照、事实表达与信息归属 |
+| `software-development/communication/` | [ao-sdlc-communication](software-development/communication/ao-sdlc-communication/SKILL.md) | 共用术语与语言习惯、前后版本参照及事实表达 |
 | `software-development/communication/` | [ao-sdlc-how-to-write-commit-message](software-development/communication/ao-sdlc-how-to-write-commit-message/SKILL.md) | Commit message 的标题、正文、信息归属与项目格式 |
 
 软件开发任务从 [ao-sdlc-overview](software-development/ao-sdlc-overview/SKILL.md) 选择方法。命名、组织与分发规则见 [DEVELOPING.md](../../DEVELOPING.md#skill-命名与检查)。
