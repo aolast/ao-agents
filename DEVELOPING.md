@@ -29,9 +29,11 @@ GitHub 仓库启用 **Automatically delete head branches**，在 PR 合并后自
 提交消息遵循 Conventional Commits，统一使用无 scope 的格式：`<type>[!]: <description>`，通常为 `type: description`。type 使用英文；description 以中文为主，保留必要英文术语，清楚说明变更目的。
 
 - 常用 type：`feat` 新功能、`fix` 修复、`docs` 文档、`refactor` 重构、`test` 测试、`ci` CI 配置、`build` 构建与依赖、`chore` 日常维护。
+- Skill 是本仓库的核心功能，`SKILL.md` 中的触发条件、指令和示例都是功能实现的一部分。新增或增强 skill 使用 `feat`，修正 skill 的行为或指令错误使用 `fix`，保持行为不变的内部整理使用 `refactor`；不能仅因源文件是 Markdown 就归为 `docs`。
+- `docs` 用于 README、使用说明、开发约定等说明文档。功能变更及配套说明在同一提交中时，按功能变更选择 type。
 - 不使用括号中的 scope，不维护 scope 标签系统；需要说明影响范围时，直接写入 description。
 - 不兼容变更使用 `!` 或 `BREAKING CHANGE:` footer，并说明影响和迁移方式。
-- 示例：`feat: 增加代码审查 skill`、`fix: 修复 hook 事件解析失败`、`ci: 检查 PR 仅包含一个 commit`。
+- 示例：`feat: 增加代码审查 skill`、`fix: 修正审查 skill 的触发条件`、`docs: 更新本地开发设置说明`、`ci: 检查 PR 仅包含一个 commit`。
 
 PR 标题沿用最终 commit 的标题；squash merge 时核对最终提交消息，保持同一格式。当前通过开发流程与评审遵守此约定，暂不额外引入 commitlint 或 CI job。
 
