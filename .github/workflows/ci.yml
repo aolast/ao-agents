@@ -20,10 +20,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements-dev.txt
-      - name: Test the naming check and pre-commit hook
+      - name: Test skill metadata, catalog generation and pre-commit
         run: python -m unittest discover -s scripts/tests -v
       - name: Check repository skill names
         run: python scripts/check-skill-names.py
+      - name: Check generated skill catalog
+        run: python scripts/generate-skill-catalog.py --check
 
   pr-single-commit:
     name: pr-single-commit

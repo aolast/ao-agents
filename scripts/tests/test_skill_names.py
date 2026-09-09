@@ -63,6 +63,12 @@ class SkillNamesTest(unittest.TestCase):
             subprocess.run(["git", "init", "-q", directory], check=True)
             (root / "scripts").mkdir()
             (root / "scripts/check-skill-names.py").write_bytes(SCRIPT.read_bytes())
+            (root / "scripts/generate-skill-catalog.py").write_bytes(
+                (SCRIPT.parent / "generate-skill-catalog.py").read_bytes())
+            readme = root / "agents/skills/README.md"
+            readme.parent.mkdir(parents=True)
+            readme.write_text("<!-- BEGIN GENERATED SKILL CATALOG -->\n"
+                              "<!-- END GENERATED SKILL CATALOG -->\n")
             path = root / "agents/skills/ao-review/SKILL.md"
             path.parent.mkdir(parents=True)
             path.write_text(skill("review"))
