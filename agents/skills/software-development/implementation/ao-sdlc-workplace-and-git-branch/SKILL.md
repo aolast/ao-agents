@@ -130,4 +130,4 @@ git diff --exit-code <开发分支> <审核分支>
 - 目标分支增加了与任务无关的文件：先同步 dev，再生成 review；不能用落后 dev 的整棵文件树覆盖新基线，导致该文件被删除。
 - Review 已 squash 合入目标分支，dev 最终内容与送审快照一致且没有未交付修改：即使 `git branch --merged` 未列出 dev，也应核实后清理 dev、review 及本任务备份引用。
 
-本 skill 负责任务工作区、其内部仓库的 Git 分支和提交组织；仅为准备工作区而加载时，应用工作区与环境条件即可，不自动启动送审流程。提交表达使用 [how-to-write-commit-message](../../communication/ao-sdlc-how-to-write-commit-message/SKILL.md)，验证深度使用 [testing](../../testing/ao-sdlc-testing/SKILL.md)。它不增加推送、发布评论或合并权限，也不把 Ao Agents 的提交格式和合并责任推广到其他项目。
+本 skill 负责任务工作区、其内部仓库的 Git 分支和提交组织；仅为准备工作区而加载时，应用工作区与环境条件即可，不自动启动送审流程。提交与送审文案使用 ao-sdlc-write-change-descriptions 中对应的写作模式，验证深度使用 [testing](../../testing/ao-sdlc-testing/SKILL.md)。它不增加推送、发布评论或合并权限，也不把 Ao Agents 的提交格式和合并责任推广到其他项目。
