@@ -2,6 +2,8 @@
 
 本目录统一索引可复用 skills。零散 skill 直接放在此目录；`software-development/` 按开发活动分组，各分类下放具体 skill 文件夹。
 
+Testing 按项目、阶段及验证对象确定证据与完成条件。
+
 `communication/` 按表达职责组织，包含通用表达原则与具体产物的写作方法。Commit message、review request 和设计文档的写作方法归入该分类；形成设计与作出方案取舍归入 `design/`，具体实现方法归入 `implementation/`。
 
 Commit message 与 review request 的写作统一由 `ao-sdlc-write-change-descriptions` 提供，按用户请求选择一种或两种产物；模板、checklist 和完整配对示例均在其 `SKILL.md` 内维护。
@@ -36,7 +38,7 @@ SDLC 中，design 负责形成方案，implementation 负责组织实现，revie
 | [ao-sdlc-functionality-review](software-development/review/ao-sdlc-functionality-review/SKILL.md) | 评审代码实现是否正确满足需求与契约。用于 implementation-level 的 functionality review，核验正常行为、边界条件、错误与状态变化、副作用、兼容性及验证证据。 |
 | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 编排系统设计、code change scope、functionality 与 code-quality 的分层评审。用于完整 review、实现后自审及修正复核，选择必要层级、统一证据、合并发现并交付结论。 |
 | [ao-sdlc-system-design-review](software-development/review/ao-sdlc-system-design-review/SKILL.md) | 评审系统设计中的职责边界、接口契约、数据流、失败语义和演进方案。用于设计稿评审，或 code change 改变服务边界、数据归属、跨组件契约及运行方式时；聚焦方案能否满足需求与约束。 |
-| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更设计和执行必要测试与验证。用于制定验收证据、补充回归测试、改进测试有效性或判断验证是否充分；关注行为、关键失败路径、可靠性和维护成本。 |
+| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更规划和执行测试与验证。按项目要求、开发阶段及 function、class、module 或 feature 的验证目标确定范围、证据和停止条件，判断当前结论是否成立及还缺什么。 |
 | [ao-sdlc-work-log](software-development/work-log/ao-sdlc-work-log/SKILL.md) | 在软件开发任务中维护轻量工作记录并据此恢复。用于中途暂停、Agent 或人类交接、长期调查获得关键结论以及继续已有任务，降低重复调查成本而不过度记录过程。 |
 
 <!-- END GENERATED SKILL CATALOG -->
