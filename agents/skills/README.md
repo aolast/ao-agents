@@ -12,7 +12,7 @@ Code quality 在自身 references 中维护 naming、repo integration（含何�
 
 这些 skills 是宿主无关的文本指令。分发顶层入口时确保四个专项按完整名称可发现；分发 code-quality 时保留其 references。源码目录存在不代表已经安装或生效。
 
-SDLC 中，design 负责形成方案，implementation 负责组织实现，review 负责独立评审或实现后自审。Implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
+SDLC 中，design 负责形成契约与关键取舍，implementation 在这些约束内细化代码，并将有证据的设计冲突反馈到相关决定；low-level design 按决策影响划界，不固定归属某个阶段。Testing 按项目、阶段及验证对象确定证据与完成条件。Review 负责独立评审或实现后自审；implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
 
 编排 skills 为 `ao-sdlc-implementation`、`ao-sdlc-workplace-and-git-branch`、`ao-sdlc-refactoring`、`ao-sdlc-performance-optimization` 和 `ao-sdlc-review`，按实际步骤以完整名称引用所需能力；分发时需确保依赖可发现。其余 SDLC skills 聚焦自身职责，不依赖其他 skills；skill 内部 references 仍通过相对链接读取。
 
@@ -36,7 +36,7 @@ SDLC 中，design 负责形成方案，implementation 负责组织实现，revie
 | [ao-sdlc-functionality-review](software-development/review/ao-sdlc-functionality-review/SKILL.md) | 评审代码实现是否正确满足需求与契约。用于 implementation-level 的 functionality review，核验正常行为、边界条件、错误与状态变化、副作用、兼容性及验证证据。 |
 | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 编排系统设计、code change scope、functionality 与 code-quality 的分层评审。用于完整 review、实现后自审及修正复核，选择必要层级、统一证据、合并发现并交付结论。 |
 | [ao-sdlc-system-design-review](software-development/review/ao-sdlc-system-design-review/SKILL.md) | 评审系统设计中的职责边界、接口契约、数据流、失败语义和演进方案。用于设计稿评审，或 code change 改变服务边界、数据归属、跨组件契约及运行方式时；聚焦方案能否满足需求与约束。 |
-| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更设计和执行必要测试与验证。用于制定验收证据、补充回归测试、改进测试有效性或判断验证是否充分；关注行为、关键失败路径、可靠性和维护成本。 |
+| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更规划和执行测试与验证。按项目要求、开发阶段及 function、class、module 或 feature 的验证目标确定范围、证据和停止条件，判断当前结论是否成立及还缺什么。 |
 | [ao-sdlc-work-log](software-development/work-log/ao-sdlc-work-log/SKILL.md) | 在软件开发任务中维护轻量工作记录并据此恢复。用于中途暂停、Agent 或人类交接、长期调查获得关键结论以及继续已有任务，降低重复调查成本而不过度记录过程。 |
 
 <!-- END GENERATED SKILL CATALOG -->
