@@ -12,6 +12,10 @@ Code quality 在自身 references 中维护 naming、repo integration（含何�
 
 这些 skills 是宿主无关的文本指令。分发顶层入口时确保四个专项按完整名称可发现；分发 code-quality 时保留其 references。源码目录存在不代表已经安装或生效。
 
+SDLC 中，design 负责形成方案，implementation 负责组织实现，review 负责独立评审或实现后自审。Implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
+
+编排 skills 为 `ao-sdlc-implementation`、`ao-sdlc-workplace-and-git-branch`、`ao-sdlc-refactoring`、`ao-sdlc-performance-optimization` 和 `ao-sdlc-review`，按实际步骤以完整名称引用所需能力；分发时需确保依赖可发现。其余 SDLC skills 聚焦自身职责，不依赖其他 skills；skill 内部 references 仍通过相对链接读取。
+
 <!-- BEGIN GENERATED SKILL CATALOG -->
 
 | Skill | 说明 |
@@ -21,18 +25,18 @@ Code quality 在自身 references 中维护 naming、repo integration（含何�
 | [ao-writing-review](ao-writing-review/SKILL.md) | 审核和润色文档、说明、指令及日常书面表达，依据 checklist 和案例识别写作 anti-pattern，重点检查缺乏语境支撑的防御性补充、无依据的对比及信息位置不当。用于请求 writing review、检查表达问题或按已知问题润色文本时。 |
 | [ao-sdlc-communication](software-development/communication/ao-sdlc-communication/SKILL.md) | 软件开发中的共用表达原则。用于 commit message、review request、设计说明、评审意见和进度沟通，区分 code change、评审请求、分支称呼及平台术语，明确变更前后的版本参照、事实与证据。 |
 | [ao-sdlc-write-change-descriptions](software-development/communication/ao-sdlc-write-change-descriptions/SKILL.md) | 撰写、审查或更新 commit message 与 review request（PR/CR/MR）的标题和正文，按提交或完整送审目标组织事实、动机、取舍和验证说明；内含两套模板、配对示例及各自的 checklist，不负责提交、送审操作或代码审查。 |
-| [ao-sdlc-design](software-development/design/ao-sdlc-design/SKILL.md) | 制定或审查软件变更设计。用于澄清预期行为、scope、模块与接口边界、技术债处理时机、方案取舍及交付拆分；按风险和未知项调整设计深度。 |
-| [ao-sdlc-implementation](software-development/implementation/ao-sdlc-implementation/SKILL.md) | 按需求和设计完成增量代码变更，并提供可复用的实现质量标准。用于功能实现、已定位问题的修复及代码质量判断，覆盖职责、依赖、错误处理、资源生命周期和可维护性。 |
+| [ao-sdlc-design](software-development/design/ao-sdlc-design/SKILL.md) | 制定和细化软件变更方案。用于澄清预期行为、scope、模块与接口边界、技术债处理时机、方案取舍及交付拆分；按风险和未知项调整设计深度，不作为独立设计评审入口。 |
+| [ao-sdlc-implementation](software-development/implementation/ao-sdlc-implementation/SKILL.md) | 组织从需求和设计到增量代码变更的实现工作流。用于功能实现与已定位问题的修复，按需组合工作区准备、方案澄清、验证和实现后自审；不作为独立代码评审入口。 |
 | [ao-sdlc-workplace-and-git-branch](software-development/implementation/ao-sdlc-workplace-and-git-branch/SKILL.md) | 用于创建或使用任务工作区、开始仓库修改、运行会写入文件的验证、操作 Git 分支及准备 PR/CR/MR。作为 coding agent 的开发习惯，定义工作区目录及默认位置，在其内部使用 clone 或 worktree 隔离仓库，在任务期间保留开发历史、生成单提交审核分支，并在合入目标分支后清理任务分支。 |
 | [ao-sdlc-investigation](software-development/investigation/ao-sdlc-investigation/SKILL.md) | 调查软件问题的现象、发生条件和原因，并选择与实际环境匹配的专项方法。用于根因未知的 bug、运行时异常、数据库或 CI 环境问题、性能瓶颈定位；以证据区分假设，不预设必须改代码。 |
-| [ao-sdlc-performance-optimization](software-development/performance-optimization/ao-sdlc-performance-optimization/SKILL.md) | 组织软件性能优化。用于改善延迟、吞吐、内存、资源占用或运行成本；定义代表性工作负载和指标，定位瓶颈，并在可比较条件下验证收益、正确性与代价。 |
+| [ao-sdlc-performance-optimization](software-development/performance-optimization/ao-sdlc-performance-optimization/SKILL.md) | 编排软件性能优化中的调查、方案选择、实现与验证。用于改善延迟、吞吐、内存、资源占用或运行成本；定义代表性工作负载和指标，定位瓶颈，并在可比较条件下验证收益、正确性与代价。 |
 | [ao-sdlc-refactoring](software-development/refactoring/ao-sdlc-refactoring/SKILL.md) | 组织保持外部行为的软件结构调整。用于消除重复规则、降低耦合、简化控制流或有明确结构目标的技术债清理；定义行为保持边界并组合设计、实现、测试与审查方法。 |
 | [ao-sdlc-change-scope-review](software-development/review/ao-sdlc-change-scope-review/SKILL.md) | 评审单个 commit 或完整 review request 的 code diff 范围、完整性与可审查性。用于判断改动是否混入独立目的、遗漏必要配套，或需要拆成更易核验的 logical bundles，并给出依赖与交付顺序。 |
 | [ao-sdlc-code-quality-review](software-development/review/ao-sdlc-code-quality-review/SKILL.md) | 评审具体实现的可理解性、结构与可维护性。用于 implementation-level 的 code-quality review，覆盖 naming、class/module 划分、依赖与抽象、repo integration、遵循或偏离惯例的判断及 code smells。 |
 | [ao-sdlc-functionality-review](software-development/review/ao-sdlc-functionality-review/SKILL.md) | 评审代码实现是否正确满足需求与契约。用于 implementation-level 的 functionality review，核验正常行为、边界条件、错误与状态变化、副作用、兼容性及验证证据。 |
 | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 编排系统设计、code change scope、functionality 与 code-quality 的分层评审。用于完整 review、实现后自审及修正复核，选择必要层级、统一证据、合并发现并交付结论。 |
 | [ao-sdlc-system-design-review](software-development/review/ao-sdlc-system-design-review/SKILL.md) | 评审系统设计中的职责边界、接口契约、数据流、失败语义和演进方案。用于设计稿评审，或 code change 改变服务边界、数据归属、跨组件契约及运行方式时；聚焦方案能否满足需求与约束。 |
-| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更设计和执行必要测试与验证。用于制定验收证据、补充回归测试、审查测试质量或判断验证是否充分；关注行为、关键失败路径、可靠性和维护成本。 |
+| [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更设计和执行必要测试与验证。用于制定验收证据、补充回归测试、改进测试有效性或判断验证是否充分；关注行为、关键失败路径、可靠性和维护成本。 |
 | [ao-sdlc-work-log](software-development/work-log/ao-sdlc-work-log/SKILL.md) | 在软件开发任务中维护轻量工作记录并据此恢复。用于中途暂停、Agent 或人类交接、长期调查获得关键结论以及继续已有任务，降低重复调查成本而不过度记录过程。 |
 
 <!-- END GENERATED SKILL CATALOG -->
