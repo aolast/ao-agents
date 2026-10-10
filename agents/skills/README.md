@@ -14,7 +14,7 @@ Code quality 在自身 references 中维护 naming、repo integration（含何�
 
 这些 skills 是宿主无关的文本指令。分发顶层入口时确保四个专项按完整名称可发现；分发 code-quality 时保留其 references。源码目录存在不代表已经安装或生效。
 
-SDLC 中，design 负责形成方案，implementation 负责组织实现，review 负责独立评审或实现后自审。Implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
+SDLC 中，design 负责形成契约与关键取舍，implementation 在这些约束内细化代码，并将有证据的设计冲突反馈到相关决定；low-level design 按决策影响划界，不固定归属某个阶段。Review 负责独立评审或实现后自审；implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
 
 编排 skills 为 `ao-sdlc-implementation`、`ao-sdlc-workplace-and-git-branch`、`ao-sdlc-refactoring`、`ao-sdlc-performance-optimization` 和 `ao-sdlc-review`，按实际步骤以完整名称引用所需能力；分发时需确保依赖可发现。其余 SDLC skills 聚焦自身职责，不依赖其他 skills；skill 内部 references 仍通过相对链接读取。
 
