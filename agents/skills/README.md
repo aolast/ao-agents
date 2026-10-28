@@ -18,12 +18,15 @@ SDLC 中，design 负责形成契约与关键取舍，implementation 在这些�
 
 编排 skills 为 `ao-sdlc-implementation`、`ao-sdlc-workplace-and-git-branch`、`ao-sdlc-refactoring`、`ao-sdlc-performance-optimization` 和 `ao-sdlc-review`，按实际步骤以完整名称引用所需能力；分发时需确保依赖可发现。其余 SDLC skills 聚焦自身职责，不依赖其他 skills；skill 内部 references 仍通过相对链接读取。
 
+`ao-write-task-item` 用于定义与拆解任务，可显式调用 `$ao-write-task-item` 并提供目标、已有任务或新发现；适用于支持文本 skills 的宿主，不依赖其他 skills 或外部任务系统。当前为仓库维护源，尚未安装到本机加载目录。
+
 <!-- BEGIN GENERATED SKILL CATALOG -->
 
 | Skill | 说明 |
 | --- | --- |
 | [ao-create-agent-skill](ao-create-agent-skill/SKILL.md) | 为 Ao 创建或维护 agent skill 时应用个人补充要求，规范命名、语言和 skill 引用边界。 |
 | [ao-vocabulary](ao-vocabulary/SKILL.md) | 按 Ao 的个人用语习惯处理中英互译、术语选择和中英文表达。用于翻译、润色、撰写含中英术语的内容，以及维护固定译法、保留英文和避免使用的说法。 |
+| [ao-write-task-item](ao-write-task-item/SKILL.md) | 在定义，拆解任务时使用。 |
 | [ao-writing-review](ao-writing-review/SKILL.md) | 审核和润色文档、说明、指令及日常书面表达，依据 checklist 和案例识别写作 anti-pattern，重点检查缺乏语境支撑的防御性补充、无依据的对比及信息位置不当。用于请求 writing review、检查表达问题或按已知问题润色文本时。 |
 | [ao-sdlc-communication](software-development/communication/ao-sdlc-communication/SKILL.md) | 软件开发中的共用表达原则。用于 commit message、review request、设计说明、评审意见和进度沟通，区分 code change、评审请求、分支称呼及平台术语，明确变更前后的版本参照、事实与证据。 |
 | [ao-sdlc-write-change-descriptions](software-development/communication/ao-sdlc-write-change-descriptions/SKILL.md) | 撰写、审查或更新 commit message 与 review request（PR/CR/MR）的标题和正文，按提交或完整送审目标组织事实、动机、取舍和验证说明；内含两套模板、配对示例及各自的 checklist，不负责提交、送审操作或代码审查。 |
