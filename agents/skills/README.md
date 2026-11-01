@@ -8,11 +8,13 @@ Testing 按项目、阶段及验证对象确定证据与完成条件。
 
 Commit message 与 review request 的写作统一由 `ao-sdlc-write-change-descriptions` 提供，按用户请求选择一种或两种产物；模板、checklist 和完整配对示例均在其 `SKILL.md` 内维护。
 
-`review/` 包含四个专项与一个顶层编排入口：system design、code change scope、functionality、code quality 分别维护评审方法与 checklist；`ao-sdlc-review` 按对象和风险组合必要层级，统一证据判断、发现去重及修正复核。Implementation-level 是 functionality 与 code quality 的逻辑分组，不另设 skill。
+`review/` 原有五个 skills 包含四个专项与一个顶层编排入口：system design、code change scope、functionality、code quality 分别维护评审方法与 checklist；`ao-sdlc-review` 按对象和风险组合必要层级，统一证据判断、发现去重及修正复核。Implementation-level 是 functionality 与 code quality 的逻辑分组，不另设 skill。
 
-Code quality 在自身 references 中维护 naming、repo integration（含何时 follow 或偏离惯例）与 code smells。专项可独立使用；完整 review 和实现后自审使用顶层入口。实现与评审分开，详细评审清单由 review skills 维护，不另建共享 code-quality 基础 skill。
+Code quality 在自身 references 中维护 naming、repo integration（含何时 follow 或偏离惯例）与 code smells。原有流程中，专项可独立使用；完整 review 和实现后自审使用顶层入口。实现与评审分开，详细评审清单由 review skills 维护，不另建共享 code-quality 基础 skill。
 
-这些 skills 是宿主无关的文本指令。分发顶层入口时确保四个专项按完整名称可发现；分发 code-quality 时保留其 references。源码目录存在不代表已经安装或生效。
+`ao-sdlc-general-review` 是新增的独立综合评审 skill，按背景、动机与解决思路，修改范围，代码实现，测试四章组织；实现层再区分功能正确性、代码质量与可读性、性能。可显式调用 `$ao-sdlc-general-review` 并提供待审需求、设计或 code changes，也可指定层级。内容由 frontmatter、简介、分层 checklist/question list 和结果模板组成，先建立全局理解并核对前提，再按典型情形检查多改与漏改，并在各组内判断范围调整，继而评审实现的正确性与清晰度，测试部分检查测试正确性并应用同一套代码质量标准，检查项按独立判断组织为单一子问题；结果模板采用通过／未通过结论与 P1/P2/P3 分级，包含具体标准及常见情形的判断示例。评审以阅读为主，必要复现和关键假设写在对应问题内，并对照基线区分新引入、既有无关、直接影响与间接触发关系。它不依赖其他 skills；当前与原有五个 review skills 并存，尚未迁移、替换原入口及调用关系。适用于支持文本 skills 的宿主，当前为仓库维护源，尚未安装到本机加载目录。
+
+这些 skills 是宿主无关的文本指令。分发原有编排入口时确保四个专项按完整名称可发现；分发 code-quality 时保留其 references。源码目录存在不代表已经安装或生效。
 
 SDLC 中，design 负责形成契约与关键取舍，implementation 在这些约束内细化代码，并将有证据的设计冲突反馈到相关决定；low-level design 按决策影响划界，不固定归属某个阶段。Review 负责独立评审或实现后自审；implementation 保留编写指导，详细评审方法与 checklist 由 review skills 维护。
 
@@ -39,6 +41,7 @@ SDLC 中，design 负责形成契约与关键取舍，implementation 在这些�
 | [ao-sdlc-change-scope-review](software-development/review/ao-sdlc-change-scope-review/SKILL.md) | 评审单个 commit 或完整 review request 的 code diff 范围、完整性与可审查性。用于判断改动是否混入独立目的、遗漏必要配套，或需要拆成更易核验的 logical bundles，并给出依赖与交付顺序。 |
 | [ao-sdlc-code-quality-review](software-development/review/ao-sdlc-code-quality-review/SKILL.md) | 评审具体实现的可理解性、结构与可维护性。用于 implementation-level 的 code-quality review，覆盖 naming、class/module 划分、依赖与抽象、repo integration、遵循或偏离惯例的判断及 code smells。 |
 | [ao-sdlc-functionality-review](software-development/review/ao-sdlc-functionality-review/SKILL.md) | 评审代码实现是否正确满足需求与契约。用于 implementation-level 的 functionality review，核验正常行为、边界条件、错误与状态变化、副作用、兼容性及验证证据。 |
+| [ao-sdlc-general-review](software-development/review/ao-sdlc-general-review/SKILL.md) | 使用分层 checklist 评审软件需求、设计方案或 code changes，并按结果模板交付结论。覆盖背景、动机与解决思路、修改范围、代码实现和测试；实现层细分功能正确性、代码质量与可读性、性能。用于完整 review、自审、指定层级评审及修正复核。 |
 | [ao-sdlc-review](software-development/review/ao-sdlc-review/SKILL.md) | 编排系统设计、code change scope、functionality 与 code-quality 的分层评审。用于完整 review、实现后自审及修正复核，选择必要层级、统一证据、合并发现并交付结论。 |
 | [ao-sdlc-system-design-review](software-development/review/ao-sdlc-system-design-review/SKILL.md) | 评审系统设计中的职责边界、接口契约、数据流、失败语义和演进方案。用于设计稿评审，或 code change 改变服务边界、数据归属、跨组件契约及运行方式时；聚焦方案能否满足需求与约束。 |
 | [ao-sdlc-testing](software-development/testing/ao-sdlc-testing/SKILL.md) | 为软件变更规划和执行测试与验证。按项目要求、开发阶段及 function、class、module 或 feature 的验证目标确定范围、证据和停止条件，判断当前结论是否成立及还缺什么。 |
